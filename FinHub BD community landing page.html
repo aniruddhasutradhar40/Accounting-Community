@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>FinHub BD — Community for Accounting & Finance Professionals</title>
+<meta name="description" content="A free, vetted community for accountants, finance professionals and students in Bangladesh. Learn AI tools, connect with peers, grow your career.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Hind+Siliguri:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#f2f6f3;--surface:#ffffff;--ink:#0f241f;--muted:#4b625b;--line:#cfdcd5;--brand:#0b7a63;--brand-ink:#ffffff;--mark:#f4c14f;--mark-ink:#3a2b00;color-scheme:light;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0c1a17;--surface:#12261f;--ink:#e8f3ee;--muted:#9bb5ab;--line:#244137;--brand:#3fcfa9;--brand-ink:#04251c;--mark:#f4c14f;--mark-ink:#3a2b00;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0c1a17;--surface:#12261f;--ink:#e8f3ee;--muted:#9bb5ab;--line:#244137;--brand:#3fcfa9;--brand-ink:#04251c;color-scheme:dark}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 64px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 "Hind Siliguri",system-ui,-apple-system,"Segoe UI",sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque","Hind Siliguri",system-ui,sans-serif;line-height:1.1;margin:0 0 .5em;letter-spacing:-.02em}
+h1{font-size:clamp(2.3rem,6vw,4.1rem);font-weight:800}
+h2{font-size:clamp(1.7rem,3.6vw,2.5rem);font-weight:700}
+h3{font-size:1.2rem;font-weight:700;letter-spacing:-.01em}
+p{margin:0 0 1em;color:var(--muted);max-width:62ch}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+section{padding:72px 0}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:30}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:60px;gap:16px}
+.logo{font:800 1.25rem "Bricolage Grotesque",sans-serif;text-decoration:none;letter-spacing:-.03em}
+.logo b{background:var(--mark);color:var(--mark-ink);padding:0 6px;border-radius:4px;margin-left:2px}
+nav{display:flex;gap:22px;align-items:center}
+nav a{text-decoration:none;font-size:.95rem;color:var(--muted)}
+nav a:hover{color:var(--ink)}
+.btn{display:inline-block;background:var(--brand);color:var(--brand-ink);font:600 1rem "Hind Siliguri",sans-serif;padding:12px 22px;border-radius:8px;text-decoration:none;border:2px solid var(--brand)}
+.btn.alt{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid var(--mark);outline-offset:3px}
+.hero{padding:64px 0 56px}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center}
+.hero p{font-size:1.15rem}
+.hl{background:linear-gradient(transparent 62%,var(--mark) 62%)}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin:26px 0 20px}
+.facts{display:flex;gap:18px;flex-wrap:wrap;font-size:.92rem;color:var(--muted)}
+.facts span::before{content:"✓ ";color:var(--brand);font-weight:700}
+.ledger{background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden;font-size:.9rem}
+.ledger header{position:static;background:var(--brand);color:var(--brand-ink);padding:10px 16px;font:700 .95rem "Bricolage Grotesque",sans-serif;border:0}
+.row{display:grid;grid-template-columns:1fr 64px 64px;gap:8px;padding:10px 16px;border-top:1px solid var(--line)}
+.row:first-of-type{border-top:0}
+.row.h{color:var(--muted);font-size:.8rem}
+.row span:nth-child(n+2){text-align:right;font-variant-numeric:tabular-nums}
+.row.t{background:var(--bg);font-weight:600}
+.row.ok span:first-child::after{content:" ✓";color:var(--brand)}
+.ledger small{display:block;padding:10px 16px;color:var(--muted);border-top:1px solid var(--line)}
+.grid{display:grid;gap:18px}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g4{grid-template-columns:repeat(4,1fr)}
+.g2{grid-template-columns:repeat(2,1fr)}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:24px}
+.card p{margin:0;font-size:.98rem}
+.alt-bg{background:var(--surface);border-block:1px solid var(--line)}
+.alt-bg .card{background:var(--bg)}
+.about{display:grid;grid-template-columns:200px 1fr;gap:36px;align-items:center}
+.avatar{width:200px;height:200px;border-radius:50%;background:var(--brand);color:var(--brand-ink);display:grid;place-items:center;font:800 3.4rem "Bricolage Grotesque",sans-serif}
+.tools{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.tools span{border:1px solid var(--line);background:var(--surface);padding:6px 14px;border-radius:99px;font-size:.92rem}
+.steps{counter-reset:s;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.steps .card{counter-increment:s;position:relative;padding-top:34px}
+.steps .card::before{content:counter(s);position:absolute;top:-16px;left:22px;width:34px;height:34px;border-radius:50%;background:var(--mark);color:var(--mark-ink);display:grid;place-items:center;font:800 1rem "Bricolage Grotesque",sans-serif}
+details{border-bottom:1px solid var(--line);padding:16px 0}
+summary{cursor:pointer;font:600 1.08rem "Hind Siliguri",sans-serif;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:1.4rem;line-height:1;color:var(--brand);transition:transform .2s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{margin:10px 0 0}
+.final{background:var(--brand);color:var(--brand-ink);text-align:center;border-radius:14px;padding:56px 24px}
+.final p{color:inherit;margin:0 auto 24px;opacity:.9}
+.final .btn{background:var(--mark);color:var(--mark-ink);border-color:var(--mark)}
+footer{border-top:1px solid var(--line);padding:30px 0;font-size:.9rem;color:var(--muted)}
+footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+footer a{margin-right:16px;text-decoration:none}
+@media (max-width:860px){
+.hero-grid,.about{grid-template-columns:1fr}
+.g3,.g4,.steps{grid-template-columns:1fr 1fr}
+nav a:not(.btn){display:none}
+.avatar{width:120px;height:120px;font-size:2.2rem}
+section{padding:56px 0}}
+@media (max-width:560px){.g3,.g4,.g2,.steps{grid-template-columns:1fr}.steps{gap:30px}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+<a class="logo" href="#top">Fin<b>Hub</b> BD</a>
+<nav><a href="#benefits">Benefits</a><a href="#how">How it works</a><a href="#faq">FAQ</a><a class="btn join" href="#">Join free</a></nav>
+</div></header>
+
+<main id="top">
+<section class="hero"><div class="wrap hero-grid">
+<div>
+<p style="margin-bottom:10px"><strong style="color:var(--brand)">Now accepting members. Free to join.</strong></p>
+<h1>Where Bangladesh’s accounting & finance people <span class="hl">learn AI together</span>.</h1>
+<p>FinHub BD is a free, vetted community for accountants, finance professionals and students. Learn AI tools, share real workflows, find opportunities and grow your career with peers.</p>
+<div class="cta"><a class="btn join" href="#">Join the community</a><a class="btn alt" href="#benefits">See what’s inside</a></div>
+<div class="facts"><span>Free forever</span><span>Private group</span><span>Vetted members</span></div>
+</div>
+<div class="ledger" aria-label="Example of a month-end close checklist shared in the community">
+<header>Month-end close checklist · shared by a member</header>
+<div class="row h"><span>Task</span><span>Owner</span><span>Done</span></div>
+<div class="row ok"><span>Bank reconciliation</span><span>Nusrat</span><span>Day 2</span></div>
+<div class="row ok"><span>Accruals via AI prompt</span><span>Rafi</span><span>Day 3</span></div>
+<div class="row ok"><span>Variance commentary</span><span>Tania</span><span>Day 4</span></div>
+<div class="row t"><span>Close time</span><span></span><span>-3 days</span></div>
+<small>Templates like this are shared by members every week.</small>
+</div>
+</div></section>
+
+<section class="alt-bg"><div class="wrap">
+<h2>AI is changing accounting. Don’t figure it out alone.</h2>
+<p>Tasks that took days now take minutes. Roles that felt safe are shifting. The professionals who adapt fastest are the ones learning together.</p>
+<div class="grid g3" style="margin-top:28px">
+<div class="card"><h3>Learn</h3><p>AI workflows, automation playbooks and real case studies from people who use them at work. No theory, no fluff.</p></div>
+<div class="card"><h3>Connect</h3><p>Meet accountants, auditors, CFOs and FP&A people who get your day-to-day. Ask questions and share wins.</p></div>
+<div class="card"><h3>Grow</h3><p>Job leads, mentors from senior leaders and a network that opens doors you didn’t know existed.</p></div>
+</div></div></section>
+
+<section><div class="wrap about">
+<div class="avatar" aria-hidden="true">YN</div>
+<div>
+<h2>Built by someone who wanted this community years ago.</h2>
+<p>Add the founder’s story here: years of experience, the problem you saw, and why you started FinHub BD. Two or three honest sentences work best.</p>
+<a class="btn alt" href="#">About the founder</a>
+</div></div></section>
+
+<section class="alt-bg" id="benefits"><div class="wrap">
+<h2>Everything you need to grow, in one community.</h2>
+<p>A private, high-signal space for finance people. Here is what members get.</p>
+<div class="grid g4" style="margin-top:28px">
+<div class="card"><h3>Peer networking</h3><p>Talk with vetted accountants, auditors and finance leaders who understand your work.</p></div>
+<div class="card"><h3>AI tools & workflows</h3><p>Prompts, automation recipes and tool reviews you can use in Excel, Tally and your ERP this week.</p></div>
+<div class="card"><h3>Learning resources</h3><p>Technical deep-dives, exam tips and career advice from people one step ahead of you.</p></div>
+<div class="card"><h3>Career opportunities</h3><p>Job leads, freelance gigs and project work shared inside the community.</p></div>
+</div></div></section>
+
+<section><div class="wrap">
+<h2>A look inside.</h2>
+<div class="grid g2" style="margin-top:26px">
+<div class="card"><h3>Topic channels</h3><p>Separate spaces for AI & automation, audit, tax & VAT, month-end close, careers and study abroad.</p></div>
+<div class="card"><h3>Events & AMAs</h3><p>Regular workshops, live Q&A with industry leaders and peer-led roundtables.</p></div>
+<div class="card"><h3>Resource library</h3><p>Checklists, Excel templates and AI prompt libraries contributed by members.</p></div>
+<div class="card"><h3>Mentorship pairing</h3><p>Get matched with a senior professional, or mentor the next generation.</p></div>
+</div>
+<h3 style="margin-top:40px">Tools our members use</h3>
+<div class="tools"><span>Excel</span><span>Tally</span><span>QuickBooks</span><span>Xero</span><span>SAP</span><span>NetSuite</span><span>Power BI</span><span>Claude</span></div>
+</div></section>
+
+<section class="alt-bg"><div class="wrap">
+<h2>Built for finance professionals at every level.</h2>
+<p>Every member is vetted, so conversations stay useful.</p>
+<div class="grid g3" style="margin-top:28px">
+<div class="card"><h3>Finance managers</h3><p>Lead the close, manage teams and keep the books tight.</p></div>
+<div class="card"><h3>CFOs & leaders</h3><p>Share ideas on leadership, systems and scaling a finance team.</p></div>
+<div class="card"><h3>CAs & accountants</h3><p>From audit readiness to technical accounting, solve problems together.</p></div>
+<div class="card"><h3>FP&A analysts</h3><p>Forecasting, budgeting and business partnering with people who live in the data.</p></div>
+<div class="card"><h3>Bookkeepers</h3><p>The backbone of every finance team. Build skills and plan your next step.</p></div>
+<div class="card"><h3>BBA & CSE students</h3><p>Early-career learners who want practical skills before their first job.</p></div>
+</div></div></section>
+
+<section id="how"><div class="wrap">
+<h2>From application to your first chat in 48 hours.</h2>
+<div class="steps" style="margin-top:36px">
+<div class="card"><h3>Apply</h3><p>Fill a short form about your background, your role and what you want from the community.</p></div>
+<div class="card"><h3>Get vetted</h3><p>We review every application to keep quality high. Expect a reply within 48 hours.</p></div>
+<div class="card"><h3>Join the group</h3><p>Get your invite, introduce yourself and start connecting. No fees, no catch.</p></div>
+</div></div></section>
+
+<section class="alt-bg" id="faq"><div class="wrap" style="max-width:780px">
+<h2>Frequently asked questions</h2>
+<details><summary>Is it really free?</summary><p>Yes. Membership is free for vetted accounting and finance professionals and students. No fees and no upsells.</p></details>
+<details><summary>Who is in the community?</summary><p>Accountants, auditors, finance managers, CFOs, FP&A analysts, bookkeepers and students, from fresh graduates to 20-year veterans.</p></details>
+<details><summary>What happens inside the group?</summary><p>Members ask questions, share templates and AI workflows, post job leads and join events. Think of it as your professional brain trust.</p></details>
+<details><summary>Is this a job board?</summary><p>No. It is a professional community first. Job leads are a benefit of being connected to good people.</p></details>
+<details><summary>Do I need a CA, ACCA or CMA to join?</summary><p>No. We look for committed people in accounting and finance, and students who want to learn.</p></details>
+<details><summary>How is it moderated?</summary><p>Every member is vetted, moderators are active, and spam or unprofessional behavior is not allowed.</p></details>
+</div></section>
+
+<section><div class="wrap"><div class="final">
+<h2>Your next career step starts with the right community.</h2>
+<p>Join accounting and finance professionals who are learning, connecting and growing together. Membership is free.</p>
+<a class="btn join" href="#">Apply to join</a>
+</div></div></section>
+</main>
+
+<footer><div class="wrap">
+<div><a href="#">About</a><a href="#">Terms</a><a href="#">Code of conduct</a><a href="#">Contact</a><a href="#">Privacy</a></div>
+<div>© 2026 FinHub BD. FinHub BD does not provide legal, tax or investment advice.</div>
+</div></footer>
+<script>
+// Set your real application link (Google Form, WhatsApp, Facebook group, etc.) here:
+var JOIN_URL = "#";
+document.querySelectorAll("a.join").forEach(function(a){a.href=JOIN_URL;});
+</script>
+</body>
+</html>
